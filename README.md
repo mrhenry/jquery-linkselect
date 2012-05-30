@@ -14,7 +14,7 @@ $('your-selector').linkselect();
 To undo the plugin behaviour, you can run a destroy function:
 
 ```javascript
-$('your-selector').linkselect();
+$('your-selector').linkselect('destroy');
 ```
 
 # Extra features
