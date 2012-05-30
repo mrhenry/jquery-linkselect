@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="description" content="Example jQuery linkselect plugin">
+
+  <title>Example jQuery linkselect plugin</title>
+  
+  <style type="text/css" media="screen">
+    html,
+    body {
+      padding: 0;
+      margin: 0;
+    }
+    body {
+      background-color: #eeeeee;
+      font-family: sans-serif;
+    }
+    #wrapper {
+      margin: 0 auto;
+      padding: 20px;
+      max-width: 600px;
+      background-color: #ffffff;
+    }
+    p {
+      margin: 2em 0;
+    }
+    a {
+      color: #0000EE !important;
+    }
+    a:hover {
+      text-decoration: none;
+    }
+    nav ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      font-family: Monaco, "Lucida Console", monospace;
+      overflow: hidden;
+    }
+    nav li {
+      float: left;
+      width: 50%;
+    }
+    pre {
+      border: 1px solid #cccccc;
+      padding: 10px;
+      background-color: #efefef;
+    }
+    footer {
+      text-align: center;
+      font-size: 11px;
+    }
+  </style>
+  
+  <script src="http://www.google.com/jsapi?key="></script>
+  <script type="text/javascript">
+    google.load("jquery", "1");
+  </script>
+  <script src="https://raw.github.com/mrhenry/jquery-linkselect/master/jquery-linkselect.js"></script>
+  <script>
+    $(function(){
+      
+      $('.linkselect').linkselect();
+      
+    });
+  </script>
+</head>
+<body>
+<div id="wrapper">
+  <h1>Example jQuery linkselect plugin</h1>
+  <p>Turn these links in the navigation block below...</p>
+  <nav>
+    <ul>
+      <li><a href="#a">Direct trade</a></li>
+      <li><a href="#b">Four loko twee</a></li>
+      <li><a href="#c">Chillwave shoreditch</a></li>
+      <li><a href="#d">Wayfarers VHS</a></li>
+      <li><a href="#e">DIY sriracha brooklyn</a></li>
+      <li><a href="#f">Raw denim tumblr</a></li>
+      <li><a href="#g">Master cleanse chambray</a></li>
+      <li><a href="#h">Occupy put a bird on it</a></li>
+      <li><a href="#i">Typewriter</a></li>
+      <li><a href="#j">Trust fund fanny pack ethical</a></li>
+    </ul>
+  </nav>
+  <p>... in a select box for easy navigation on your mobile site.</p>
+  <nav class="linkselect">
+    <ul>
+      <li><a href="#a">Direct trade</a></li>
+      <li><a href="#b">Four loko twee</a></li>
+      <li><a href="#c">Chillwave shoreditch</a></li>
+      <li><a href="#d">Wayfarers VHS</a></li>
+      <li><a href="#e">DIY sriracha brooklyn</a></li>
+      <li><a href="#f">Raw denim tumblr</a></li>
+      <li><a href="#g">Master cleanse chambray</a></li>
+      <li><a href="#h">Occupy put a bird on it</a></li>
+      <li><a href="#i">Typewriter</a></li>
+      <li><a href="#j">Trust fund fanny pack ethical</a></li>
+    </ul>
+  </nav>
+  <br />
+  <br />
+  <h2>How to use</h2>
+  <p>You can use this on every block that contains links:</p>
+<pre>
+$('your-selector').linkselect();
+</pre>
+  <p>To undo the plugin behaviour, you can run a destroy function:</p>
+<pre>
+$('your-selector').linkselect('destroy');  
+</pre>
+  <br />
+  <br />
+  <h2>Extra features</h2>
+  <ul>
+    <li>Sorts your links alphabetically</li>
+    <li>Removes duplicate links</li>
+    <li>Undo plugin behaviour</li>
+  </ul>
+  <br />
+  <br />
+  <footer>
+    Created by <a href="http://mrhenry.be">Mr. Henry</a>.
+  </footer>
+  <a href="https://github.com/mrhenry/jquery-linkselect"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png" alt="Fork me on GitHub"></a>
+</div>
+</body>
+</html>
