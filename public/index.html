@@ -22,8 +22,12 @@
       max-width: 600px;
       background-color: #ffffff;
     }
+    .block {
+      margin-bottom: 50px;
+    }
     p {
       margin: 2em 0;
+      line-height: 1.5em;
     }
     a {
       color: #0000EE !important;
@@ -61,48 +65,91 @@
   <script>
     $(function(){
       
+      // Example 1
       $('.linkselect').linkselect();
+      
+      // Example 2
+      $('a[href="#narrow"]').on('click', function(){
+        if ( $('body').hasClass('narrow') ) {
+          $('body').removeClass('narrow');
+          $('#wrapper').animate({
+            'width': 600
+          }, 1000, function() {
+            $('.responsive-linkselect').linkselect('destroy');
+          });
+          
+          
+        } else {
+          $('body').addClass('narrow');
+          $('#wrapper').animate({
+            'width': 320
+          }, 1000, function() {
+            $('.responsive-linkselect').linkselect();
+          });
+        }
+      });
       
     });
   </script>
 </head>
 <body>
 <div id="wrapper">
-  <h1>Example jQuery linkselect plugin</h1>
-  <p>Turn these links in the navigation block below...</p>
-  <nav>
-    <ul>
-      <li><a href="#a">Direct trade</a></li>
-      <li><a href="#b">Four loko twee</a></li>
-      <li><a href="#c">Chillwave shoreditch</a></li>
-      <li><a href="#d">Wayfarers VHS</a></li>
-      <li><a href="#e">DIY sriracha brooklyn</a></li>
-      <li><a href="#f">Raw denim tumblr</a></li>
-      <li><a href="#g">Master cleanse chambray</a></li>
-      <li><a href="#h">Occupy put a bird on it</a></li>
-      <li><a href="#i">Typewriter</a></li>
-      <li><a href="#j">Trust fund fanny pack ethical</a></li>
-    </ul>
-  </nav>
-  <p>... in a select box for easy navigation on your mobile site.</p>
-  <nav class="linkselect">
-    <ul>
-      <li><a href="#a">Direct trade</a></li>
-      <li><a href="#b">Four loko twee</a></li>
-      <li><a href="#c">Chillwave shoreditch</a></li>
-      <li><a href="#d">Wayfarers VHS</a></li>
-      <li><a href="#e">DIY sriracha brooklyn</a></li>
-      <li><a href="#f">Raw denim tumblr</a></li>
-      <li><a href="#g">Master cleanse chambray</a></li>
-      <li><a href="#h">Occupy put a bird on it</a></li>
-      <li><a href="#i">Typewriter</a></li>
-      <li><a href="#j">Trust fund fanny pack ethical</a></li>
-    </ul>
-  </nav>
-  <br />
-  <br />
-  <h2>How to use</h2>
-  <p>You can use this on every block that contains links:</p>
+  <div class="block">
+    <h1>Example jQuery linkselect plugin</h1>
+    <p>Turn these links in the navigation block below...</p>
+    <nav>
+      <ul>
+        <li><a href="#a">Direct trade</a></li>
+        <li><a href="#b">Four loko twee</a></li>
+        <li><a href="#c">Chillwave shoreditch</a></li>
+        <li><a href="#d">Wayfarers VHS</a></li>
+        <li><a href="#e">DIY sriracha brooklyn</a></li>
+        <li><a href="#f">Raw denim tumblr</a></li>
+        <li><a href="#g">Master cleanse chambray</a></li>
+        <li><a href="#h">Occupy put a bird on it</a></li>
+        <li><a href="#i">Typewriter</a></li>
+        <li><a href="#j">Trust fund fanny pack ethical</a></li>
+      </ul>
+    </nav>
+    <p>... in a select box for easy navigation on your mobile site.</p>
+    <nav class="linkselect">
+      <ul>
+        <li><a href="#a">Direct trade</a></li>
+        <li><a href="#b">Four loko twee</a></li>
+        <li><a href="#c">Chillwave shoreditch</a></li>
+        <li><a href="#d">Wayfarers VHS</a></li>
+        <li><a href="#e">DIY sriracha brooklyn</a></li>
+        <li><a href="#f">Raw denim tumblr</a></li>
+        <li><a href="#g">Master cleanse chambray</a></li>
+        <li><a href="#h">Occupy put a bird on it</a></li>
+        <li><a href="#i">Typewriter</a></li>
+        <li><a href="#j">Trust fund fanny pack ethical</a></li>
+      </ul>
+    </nav>
+  </div>
+  
+  <div class="block">
+    <h2>Show me some live action willya</h2>
+    <p>In this example, you can see how this can work in a real life responsive situation.<br><a href="#narrow">Click here</a> to narrow / expand the site width.</p>
+    <nav class="responsive-linkselect">
+      <ul>
+        <li><a href="#a">Direct trade</a></li>
+        <li><a href="#b">Four loko twee</a></li>
+        <li><a href="#c">Chillwave shoreditch</a></li>
+        <li><a href="#d">Wayfarers VHS</a></li>
+        <li><a href="#e">DIY sriracha brooklyn</a></li>
+        <li><a href="#f">Raw denim tumblr</a></li>
+        <li><a href="#g">Master cleanse chambray</a></li>
+        <li><a href="#h">Occupy put a bird on it</a></li>
+        <li><a href="#i">Typewriter</a></li>
+        <li><a href="#j">Trust fund fanny pack ethical</a></li>
+      </ul>
+    </nav>
+  </div>
+  
+  <div class="block">
+    <h2>How to use</h2>
+    <p>You can use this on every block that contains links:</p>
 <pre>
 $('your-selector').linkselect();
 </pre>
@@ -110,16 +157,17 @@ $('your-selector').linkselect();
 <pre>
 $('your-selector').linkselect('destroy');  
 </pre>
-  <br />
-  <br />
-  <h2>Extra features</h2>
-  <ul>
-    <li>Sorts your links alphabetically</li>
-    <li>Removes duplicate links</li>
-    <li>Undo plugin behaviour</li>
-  </ul>
-  <br />
-  <br />
+  </div>
+  
+  <div class="block">
+    <h2>Extra features</h2>
+    <ul>
+      <li>Sorts your links alphabetically</li>
+      <li>Removes duplicate links</li>
+      <li>Undo plugin behaviour</li>
+    </ul>
+  </div>
+  
   <footer>
     Created by <a href="http://mrhenry.be">Mr. Henry</a>.
   </footer>
